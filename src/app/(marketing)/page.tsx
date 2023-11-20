@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
-import { Link, MedalIcon } from 'lucide-react';
+import { MedalIcon } from 'lucide-react';
 import { Poppins } from 'next/font/google';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import Link from 'next/link';
 
 const textFont = Poppins({
   subsets: ['latin'],
@@ -34,7 +35,8 @@ export default function MarketingPage() {
         high rises to the home office, the way your team works is unique -
         accomplish it all with Taskify.
       </div>
-      <Button className="mt-6" size="lg" asChild>
+
+      <Button className="mt-6" size={'lg'} asChild>
         <Link href="/sign-up">Get Taskify for free</Link>
       </Button>
     </div>

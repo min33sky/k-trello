@@ -21,10 +21,7 @@ const CreateBoard = z.object({
   }),
 });
 
-export async function createBoard(
-  prevState: CreateBoardState,
-  formData: FormData,
-) {
+export async function create(prevState: CreateBoardState, formData: FormData) {
   const validatedFields = CreateBoard.safeParse({
     title: formData.get('title'),
   });

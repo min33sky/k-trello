@@ -17,6 +17,13 @@ interface FormPickerProps {
   errors?: Record<string, string[] | undefined>;
 }
 
+/**
+ * 이미지 목록을 보여주고 선택할 수 있는 컴포넌트
+ *
+ * @param id Input DOM id
+ * @param errors Input errors
+ *
+ */
 export default function FormPicker({ id, errors }: FormPickerProps) {
   const { pending } = useFormStatus();
 
@@ -58,6 +65,9 @@ export default function FormPicker({ id, errors }: FormPickerProps) {
     );
   }
 
+  /**
+   * div를 클릭하면 input:radio DOM의 값을 업데이트 시켜서 부모 Form 컴포넌트에서 활용할 수 있다.
+   */
   return (
     <div className="relative">
       <div className="grid grid-cols-3 gap-2 mb-2">
@@ -82,20 +92,24 @@ export default function FormPicker({ id, errors }: FormPickerProps) {
               disabled={pending}
               value={`${image.id}|${image.urls.thumb}|${image.urls.full}|${image.links.html}|${image.user.name}`}
             />
+
             <Image
               src={image.urls.thumb}
               alt="Unsplash image"
               className="object-cover rounded-sm"
               fill
             />
+
             {selectedImageId === image.id && (
               <div className="absolute inset-y-0 h-full w-full bg-black/30 flex items-center justify-center">
                 <Check className="h-4 w-4 text-white" />
               </div>
             )}
+
             <Link
               href={image.links.html}
               target="_blank"
+              rel="noopener noreferrer"
               className="opacity-0 group-hover:opacity-100 absolute bottom-0 w-full text-[10px] truncate text-white hover:underline p-1 bg-black/50"
             >
               {image.user.name}
@@ -103,6 +117,7 @@ export default function FormPicker({ id, errors }: FormPickerProps) {
           </div>
         ))}
       </div>
+
       <FormErrors id="image" errors={errors} />
     </div>
   );

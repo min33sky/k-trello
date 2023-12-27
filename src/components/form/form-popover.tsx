@@ -56,6 +56,7 @@ export const FormPopover = ({
   return (
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>
+
       <PopoverContent
         align={align}
         className="w-80 pt-3"
@@ -65,6 +66,7 @@ export const FormPopover = ({
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           Create board
         </div>
+
         <PopoverClose ref={closeRef} asChild>
           <Button
             className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
@@ -73,9 +75,11 @@ export const FormPopover = ({
             <XIcon className="h-4 w-4" />
           </Button>
         </PopoverClose>
+
         <form action={onSubmit} className="space-y-4">
           <div className="space-y-4">
             <FormPicker id="image" errors={fieldErrors} />
+
             <FormInput
               id="title"
               label="Board title"

@@ -16,17 +16,20 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <Logo />
         </div>
+
         <FormPopover align="start" side="bottom" sideOffset={18}>
           <Button
+            aria-label="Create new board"
             variant="primary"
             size="sm"
-            className="rounded-sm hidden md:block h-auto  py-1.5 px-2"
+            className="rounded-sm hidden md:block h-auto py-1.5 px-2"
           >
             Create
           </Button>
         </FormPopover>
         <FormPopover>
           <Button
+            aria-label="Create new board (Mobile)"
             variant="primary"
             size="sm"
             className="rounded-sm block md:hidden"
@@ -35,6 +38,7 @@ export default function Navbar() {
           </Button>
         </FormPopover>
       </div>
+
       <div className="ml-auto flex items-center gap-x-2">
         <OrganizationSwitcher
           hidePersonal

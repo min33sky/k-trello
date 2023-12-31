@@ -10,7 +10,7 @@ import { CardWithList } from '@/types';
 import { useAction } from '@/hooks/use-action';
 import { Skeleton } from '@/components/ui/skeleton';
 import { FormInput } from '@/components/form/form-input';
-import { updateCard } from '@/actions';
+import { updateCard } from '@/actions/update-card';
 
 interface HeaderProps {
   data: CardWithList;
@@ -58,7 +58,7 @@ export const Header = ({ data }: HeaderProps) => {
   };
 
   return (
-    <div className="flex tiems-start gap-x-3 mb-6 w-full">
+    <div className="flex items-start gap-x-3 mb-6 w-full">
       <Layout className="h-5 w-5 mt-1 text-neutral-700" />
       <div className="w-full">
         <form action={onSubmit}>

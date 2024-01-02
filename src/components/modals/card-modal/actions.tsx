@@ -1,7 +1,7 @@
 'use client';
 
 import { toast } from 'sonner';
-import { Copy, Trash } from 'lucide-react';
+import { Copy, CopyIcon, Trash, TrashIcon } from 'lucide-react';
 import { useParams } from 'next/navigation';
 
 import { CardWithList } from '@/types';
@@ -74,9 +74,10 @@ export const Actions = ({ data }: ActionsProps) => {
         className="w-full justify-start"
         size="inline"
       >
-        <Copy className="h-4 w-4 mr-2" />
-        Copy
+        <CopyIcon className="h-4 w-4 mr-2" />
+        복사
       </Button>
+
       <Button
         onClick={onDelete}
         disabled={isLoadingDelete}
@@ -84,8 +85,8 @@ export const Actions = ({ data }: ActionsProps) => {
         className="w-full justify-start"
         size="inline"
       >
-        <Trash className="h-4 w-4 mr-2" />
-        Delete
+        <TrashIcon className="h-4 w-4 mr-2" />
+        삭제
       </Button>
     </div>
   );

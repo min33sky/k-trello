@@ -6,10 +6,11 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/logo';
 import MobileSidebar from './mobile-sidebar';
 import { FormPopover } from '@/components/form/form-popover';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Navbar() {
   return (
-    <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm bg-white flex items-center">
+    <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm  flex items-center">
       <MobileSidebar />
 
       <div className="flex items-center gap-x-4">
@@ -22,7 +23,7 @@ export default function Navbar() {
             aria-label="Create new board"
             variant="primary"
             size="sm"
-            className="rounded-sm hidden md:block h-auto py-1.5 px-2"
+            className="text-white rounded-sm hidden md:block h-auto py-1.5 px-2"
           >
             Create
           </Button>
@@ -34,12 +35,13 @@ export default function Navbar() {
             size="sm"
             className="rounded-sm block md:hidden"
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-4 w-4 text-white" />
           </Button>
         </FormPopover>
       </div>
 
       <div className="ml-auto flex items-center gap-x-2">
+        <ThemeToggle />
         <OrganizationSwitcher
           hidePersonal
           afterCreateOrganizationUrl="/organization/:id"

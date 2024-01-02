@@ -35,14 +35,20 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       },
     });
 
+    console.log('!!!!!orgSubscription : ', orgSubscription);
+
     if (orgSubscription && orgSubscription.stripeCustomerId) {
+      console.log('시발 : ', settingsUrl);
+
       const stripeSession = await stripe.billingPortal.sessions.create({
         customer: orgSubscription.stripeCustomerId,
         return_url: settingsUrl,
       });
 
+      console.log('아니 시발');
       url = stripeSession.url;
     } else {
+      console.log('요시');
       const stripeSession = await stripe.checkout.sessions.create({
         success_url: settingsUrl,
         cancel_url: settingsUrl,
@@ -73,7 +79,9 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
       url = stripeSession.url || '';
     }
-  } catch {
+  } catch (error: any) {
+    console.log('에러 내용: ', error);
+
     return {
       error: 'Something went wrong!',
     };

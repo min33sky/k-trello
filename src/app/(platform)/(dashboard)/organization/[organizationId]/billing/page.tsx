@@ -8,6 +8,8 @@ import { Info } from '../_components/info';
 const BillingPage = async () => {
   const isPro = await checkSubscription();
 
+  console.log('프로 유무 : ', isPro);
+
   return (
     <div className="w-full">
       <Info isPro={isPro} />

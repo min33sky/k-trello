@@ -64,11 +64,14 @@ export default function NavItem({
   };
 
   return (
-    <AccordionItem value={organization.id} className="border-none">
+    <AccordionItem
+      value={organization.id}
+      className="border-none text-neutral-700 dark:text-neutral-400"
+    >
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
-          'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline',
+          'flex items-center gap-x-2 p-1.5 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline',
           isActive && !isExpanded && 'bg-sky-500/10 text-sky-700',
         )}
       >
@@ -84,7 +87,7 @@ export default function NavItem({
           <span className="font-medium text-sm">{organization.name}</span>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="pt-1 text-neutral-700">
+      <AccordionContent className="pt-1 ">
         {routes.map((route) => (
           <Button
             key={route.href}

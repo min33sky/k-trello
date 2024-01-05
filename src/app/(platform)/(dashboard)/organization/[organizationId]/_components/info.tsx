@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { CreditCard } from 'lucide-react';
+import { CreditCardIcon } from 'lucide-react';
 import { useOrganization } from '@clerk/nextjs';
 
 import { Skeleton } from '@/components/ui/skeleton';
@@ -30,7 +30,7 @@ export const Info = ({ isPro }: InfoProps) => {
       <div className="space-y-1">
         <p className="font-semibold text-xl">{organization?.name}</p>
         <div className="flex items-center text-xs text-muted-foreground">
-          <CreditCard className="h-3 w-3 mr-1" />
+          <CreditCardIcon className="h-3 w-3 mr-1" />
           {isPro ? 'Pro' : 'Free'}
         </div>
       </div>

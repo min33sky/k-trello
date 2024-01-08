@@ -33,7 +33,7 @@ export const FormSubmit = ({
       type="submit"
       variant={variant}
       size="sm"
-      className={cn(className)}
+      className={cn('dark:text-neutral-300', className)}
     >
       {children}
     </Button>

@@ -32,7 +32,7 @@ export default async function BoardList() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center font-semibold text-lg text-neutral-700">
+      <div className="flex items-center font-semibold text-lg text-neutral-700 dark:text-neutral-400">
         <User2Icon className="h-6 w-6 mr-2" />
         Your boards
       </div>
@@ -48,6 +48,7 @@ export default async function BoardList() {
             <p className="relative font-semibold text-white">{board.title}</p>
           </Link>
         ))}
+
         <FormPopover sideOffset={10} side="right">
           <div
             role="button"
